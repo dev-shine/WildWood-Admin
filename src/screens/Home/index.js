@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import OffersTable from './components/OffersTable'
 
 class Home extends Component {
 
@@ -13,7 +14,7 @@ class Home extends Component {
     console.log('-------------', offers)
     return (
       <div>
-
+        <OffersTable rows={offers}/>
       </div>
     )
   }
