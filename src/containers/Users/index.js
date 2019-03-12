@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Users from '../../screens/Users'
-
+import { 
+    fetchUsers
+} from '../../actions/users';
 class UsersContainer extends Component {
     constructor (props) {
         super(props)
@@ -20,12 +22,15 @@ class UsersContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        users: state.users.users
     };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-       
+        fetchUsers: () => {
+            dispatch(fetchUsers())
+        },
     };
 }   
 
