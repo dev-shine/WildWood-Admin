@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import SignUp from '../../screens/SignUp'
 
-class HeaderContainer extends Component {
+class SignUpContainer extends Component {
     constructor (props) {
         super(props)
 
@@ -9,29 +10,25 @@ class HeaderContainer extends Component {
            
         }
     }
+
     render () {
         return (
-            <div>
-              
-            </div>
+           <SignUp />
         )
     }
 
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        
-    };
+  return {
+    
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        
-    };
+  return {
+      
+  };
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpContainer);

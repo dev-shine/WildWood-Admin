@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { 
     fetchOffers
-} from '../../actions/home';
+} from '../../actions/offers';
 
 import Home from '../../screens/Home'
 
@@ -24,7 +24,7 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        offers: state.home.offers
+        offers: state.offers.offers
     };
 };
 

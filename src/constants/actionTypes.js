@@ -1,3 +1,9 @@
 
 export const FETCH_OFFERS = 'FETCH_OFFERS'
 export const OFFERS_RECEIVED = 'OFFERS_RECEIVED'
+
+export const SIGNIN = 'SIGNIN'
+export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'
+
+export const SIGNUP = 'SIGNUP'
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'

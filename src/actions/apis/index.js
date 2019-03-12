@@ -30,9 +30,6 @@ export const fetchDataService = (url, headers) => client.get(
 
 export const postDataService = (url, item, headers) => client.post(url, item, {
   headers: {
-    Accept: '*/*',
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'POST',
     ...headers,
   },
 })
