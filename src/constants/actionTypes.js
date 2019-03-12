@@ -1,0 +1,3 @@
+
+export const FETCH_OFFERS = 'FETCH_OFFERS'
+export const OFFERS_RECEIVED = 'OFFERS_RECEIVED'
