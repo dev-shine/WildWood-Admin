@@ -3,6 +3,8 @@ import {
     Route,
     Switch
 } from 'react-router';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from '../containers/Header';
 import Footer from '../containers/Footer';
 import Home from '../containers/Home';
@@ -13,20 +15,29 @@ import SignUp from '../containers/SignUp'
 
 class RouterComponent extends Component {
     render () {
+        const { isLoggedIn } = this.props;
         return (
-            <div style={{ height: '100vh', display: 'flex' }}>
-                <Header />
+            <div>
+            {
+                isLoggedIn &&
+                <Home />
+            }
+            {
+                !isLoggedIn &&
                 <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/sign-in" component={SignIn} />
-                    <Route path="/sign-up" component={SignUp} />
-                    <Route path="/notfound" component={NotFound}/>
+                    <Route path="/" exact component={SignIn} />
+                    <Route path="*" component={SignIn} />
                 </Switch>
-                <Footer />
+            }
             </div>
-        )
+        );
     }
 }
+const mapStateToProps = state => ({
+    isLoggedIn: state.authentication.isLoggedIn,
+});
 
-export default RouterComponent;
+const mapDispatchToProps = () => ({
+
+});
+export default withRouter(connect(mapStateToProps,  mapDispatchToProps )(RouterComponent));

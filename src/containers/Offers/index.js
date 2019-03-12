@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom';
 
-import Home from '../../screens/Home'
+import { 
+    fetchOffers
+} from '../../actions/offers';
 
-class HomeContainer extends Component {
+import Offers from '../../screens/Offers'
+
+class OffersContainer extends Component {
     constructor (props) {
         super(props)
 
@@ -14,20 +17,23 @@ class HomeContainer extends Component {
     }
     render () {
         return (
-            <Home {...this.props}/>
+            <Offers {...this.props}/>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        offers: state.offers.offers
     };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-       
+        fetchOffers: () => {
+            dispatch(fetchOffers())
+        },
     };
 }   
 
-export default  withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(OffersContainer);

@@ -1,7 +1,3 @@
-/**
- * Material UI Custom Pagination Actions Table
- * Mikel Kasneci
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';

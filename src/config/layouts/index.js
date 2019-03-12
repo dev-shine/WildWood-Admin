@@ -11,9 +11,7 @@ class LayoutsContainer extends Component {
     render () {
         return (
             <BrowserRouter>
-                <div className="layout-container">
-                    <RouterComponent />
-                </div>
+                <RouterComponent />
             </BrowserRouter>
         )
     }

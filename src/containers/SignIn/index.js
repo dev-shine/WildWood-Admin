@@ -16,7 +16,9 @@ class SignInContainer extends Component {
 
     render () {
         return (
-           <SignIn {...this.props}/>
+          <div style={{height: '100vh', display: 'flex', alignItems: 'center'}}>
+            <SignIn {...this.props}/>
+          </div>
         )
     }
 

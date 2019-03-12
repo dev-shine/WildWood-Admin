@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom';
 
-import Home from '../../screens/Home'
+import Users from '../../screens/Users'
 
-class HomeContainer extends Component {
+class UsersContainer extends Component {
     constructor (props) {
         super(props)
 
@@ -14,7 +13,7 @@ class HomeContainer extends Component {
     }
     render () {
         return (
-            <Home {...this.props}/>
+            <Users {...this.props}/>
         )
     }
 }
@@ -30,4 +29,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     };
 }   
 
-export default  withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
