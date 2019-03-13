@@ -4,6 +4,8 @@ import {
     OFFERS_RECEIVED,
     DELETE_OFFER,
     OFFER_DELETED,
+    INSERT_OFFER,
+    OFFER_INSERTED,
 } from '../../constants/actionTypes';
 
 const initialState = {
@@ -28,6 +30,12 @@ const reducer = (state = initialState, action) => {
             return newState
         case OFFER_DELETED:
             newState.count = action.count
+            newState.loading = false
+            return newState
+        case INSERT_OFFER:
+            newState.loading = true
+            return newState
+        case OFFER_INSERTED:
             newState.loading = false
             return newState
         default:

@@ -1,11 +1,13 @@
 
 export const FETCH_OFFERS = 'FETCH_OFFERS'
 export const OFFERS_RECEIVED = 'OFFERS_RECEIVED'
+export const DELETE_OFFER = 'DELETE_OFFER'
+export const OFFER_DELETED = 'OFFER_DELETED'
+export const INSERT_OFFER = 'INSERT_OFFER'
+export const OFFER_INSERTED = 'OFFER_INSERTED'
 
 export const FETCH_USERS = 'FETCH_USERS'
 export const USERS_RECEIVED = 'USERS_RECEIVED'
-export const DELETE_OFFER = 'DELETE_OFFER'
-export const OFFER_DELETED = 'OFFER_DELETED'
 
 export const SIGNIN = 'SIGNIN'
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'

@@ -24,7 +24,7 @@ class OffersTable extends Component {
     super();
     this.state = {
       page: 0,
-      rowsPerPage: 10,
+      rowsPerPage: 5,
     };
   }
 

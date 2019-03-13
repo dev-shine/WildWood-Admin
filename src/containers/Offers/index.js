@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { 
     fetchOffers,
     deleteOffer,
+    insertOffer,
 } from '../../actions/offers';
 
 import Offers from '../../screens/Offers'
@@ -36,6 +37,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         deleteOffer: id => {
             dispatch(deleteOffer(id))
+        },
+        insertOffer: offer => {
+            dispatch(insertOffer(offer))
         }
     };
 }   
