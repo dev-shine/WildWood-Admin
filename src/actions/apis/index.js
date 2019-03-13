@@ -5,7 +5,8 @@ import store from '../../store';
 // } from '../../actions/authentication';
 
 const client = axios.create({
-  baseURL: 'http://18.220.22.214:3000/api',
+  baseURL: 'http://localhost:3000/api',
+  // baseURL: 'http://18.220.22.214:3000/api',
 });
 
 client.interceptors.response.use(response => response, error => {
@@ -38,21 +39,15 @@ export const postDataService = (url, item, headers) => client.post(url, item, {
 
 export const updateDataService = (url, item, headers) => client.patch(url, item, {
   headers: {
-    Accept: '*/*',
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'PUT',
     ...headers,
   },
 })
   .then(response => response)
   .catch(err => err);
 
-  export const deleteDataService = (url, headers) => client.get(
+  export const deleteDataService = (url, headers) => client.delete(
     url, {
       headers: {
-        Accept: '*',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Methods': 'DELETE',
         ...headers,
       },
     },

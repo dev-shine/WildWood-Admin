@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { 
-    fetchOffers
+    fetchOffers,
+    deleteOffer,
 } from '../../actions/offers';
 
 import Offers from '../../screens/Offers'
@@ -33,6 +34,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchOffers: () => {
             dispatch(fetchOffers())
         },
+        deleteOffer: id => {
+            dispatch(deleteOffer(id))
+        }
     };
 }   
 

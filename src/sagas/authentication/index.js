@@ -11,6 +11,7 @@ import {
 
 function* signIn( action ) {
   const state = yield select()
+  console.log('--------------', action)
   const response = yield postDataService('/users/login', action.user, state.authentication.header)
   yield put({ type: SIGNIN_SUCCESS, response, });
 }

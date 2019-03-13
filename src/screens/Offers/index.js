@@ -7,11 +7,16 @@ class Offers extends Component {
     const { fetchOffers } = this.props
     fetchOffers()
   }
+  deleteOffer = (id) => {
+    const { deleteOffer } = this.props
+    console.log('-----------', id)
+    deleteOffer(id)
+  }
   render () {
     const { offers } = this.props
     return (
       <div>
-        <OffersTable rows={offers} />
+        <OffersTable rows={offers} deleteOffer={this.deleteOffer}/>
       </div>
     )
   }

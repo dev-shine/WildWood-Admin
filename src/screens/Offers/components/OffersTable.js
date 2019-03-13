@@ -6,7 +6,9 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import CustomPaginationActionsTable from '../../../components/CustomPaginationActionsTable';
-
+import {
+  DeleteRounded,
+} from '@material-ui/icons';
 const CustomTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.white,
@@ -34,6 +36,10 @@ class OffersTable extends Component {
     this.setState({ page: 0, rowsPerPage });
   };
 
+  deleteOffer = (id) => {
+    const { deleteOffer } = this.props
+    deleteOffer(id)
+  }
   render() {
     const { rows } = this.props;
     const { rowsPerPage, page } = this.state;
@@ -55,6 +61,7 @@ class OffersTable extends Component {
             <CustomTableCell>Pricing</CustomTableCell>
             <CustomTableCell>Created At</CustomTableCell>
             <CustomTableCell>Featured Image Url</CustomTableCell>
+            <CustomTableCell></CustomTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -68,6 +75,7 @@ class OffersTable extends Component {
               <TableCell>
                 {row.featured_image_url}
               </TableCell>
+              <TableCell><DeleteRounded onClick={() => this.deleteOffer(row.id)}/></TableCell>
             </TableRow>
           ))}
           {emptyRows > 0 && (
